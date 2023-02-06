@@ -1,17 +1,18 @@
 
 .bg {
-    background-image: url('./cat_game_wallpaper.jpg'); 
-    height: 90%;
+    background-image: url('./cat_game.jpg'); 
+    height: 100%;
     width: 100%;
-    position: fixed;
-    overflow: scroll;
 }
 .games__container {
     margin-left: 5%;
-    position: absolute;
-
+    overflow: scroll;
 }
+
 .game__maker {
     font-style: italic;
 }
 
+.games {
+    margin-bottom: 20%;
+}
