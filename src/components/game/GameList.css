@@ -4,9 +4,11 @@
     height: 100%;
     width: 100%;
     position: fixed;
+    overflow: scroll;
 }
 .games__container {
     margin-left: 5%;
+    position: absolute;
 }
 .game__maker {
     font-style: italic;
