@@ -16,7 +16,7 @@ export const EventForm = () => {
     */
   const [currentEvent, setCurrentEvent] = useState({
     game: "",
-    event_date: "2023-02-23",
+    event_date: "",
     event_time: "",
     description: "",
   });
@@ -35,6 +35,11 @@ export const EventForm = () => {
   const gameOptions = games.map((el) => (
     <option value={el.id}>{el.game_title}</option>
   ));
+
+  const convertTime = (tm) => {
+    let [h, m] = tm.split(":"); //splits out the hour and minute
+    return h + ":" + m + ":00";
+  };
 
   return (
     <div className="bg-form">
@@ -74,7 +79,7 @@ export const EventForm = () => {
             <label htmlFor="event_date">Event Date: </label>
             <input
               id="event_date"
-              type="text"
+              type="date"
               onChange={changeEventState}
               value={currentEvent.event_date}
             />
@@ -85,7 +90,7 @@ export const EventForm = () => {
             <label htmlFor="event_date">Event Time: </label>
             <input
               id="event_time"
-              type="text"
+              type="time"
               onChange={changeEventState}
               value={currentEvent.event_time}
             />
@@ -100,7 +105,7 @@ export const EventForm = () => {
             const event = {
               game: parseInt(currentEvent.game),
               event_date: currentEvent.event_date,
-              event_time: currentEvent.event_time,
+              event_time: convertTime(currentEvent.event_time),
               description: currentEvent.description,
             };
 

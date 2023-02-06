@@ -13,7 +13,7 @@ export const GameList = (props) => {
     <div className="bg">
         <div className="games__container">
       <header className="games__header">
-        <h1>Games</h1>
+        <h1>Level-Up Games</h1>
       </header>
       <article className="games">
         {games.map((game) => {

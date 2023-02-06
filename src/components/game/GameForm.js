@@ -13,11 +13,11 @@ export const GameForm = () => {
         provide some default values.
     */
   const [currentGame, setCurrentGame] = useState({
-    skill_level: "Beginner",
-    num_of_players: 1,
+    skill_level: "",
+    num_of_players: "",
     game_title: "",
     maker: "",
-    type: 1,
+    type: 0,
   });
 
   useEffect(() => {
@@ -89,6 +89,20 @@ export const GameForm = () => {
         </fieldset>
         <fieldset>
           <div className="form-group">
+            <label htmlFor="num_of_players">Number of Players: </label>
+            <input
+              type="number"
+              id="num_of_players"
+              required
+              min="1"
+              className="form-control"
+              value={currentGame.num_of_players}
+              onChange={changeGameState}
+            />
+          </div>
+        </fieldset>
+        <fieldset>
+          <div className="form-group">
             <label htmlFor="type">Game Type: </label>
             <select
               id="type"
@@ -98,7 +112,7 @@ export const GameForm = () => {
               value={currentGame.type}
               onChange={changeGameState}
             >
-              <option value="0">Select the type of game</option>
+              <option value="0">Select type of game</option>
               {gameTypeOptions}
             </select>
           </div>

@@ -37,7 +37,7 @@ export const EventList = (props) => {
     <div className="container">
         <div className="events__container">
       <header className="events__header">
-        <h1>Events</h1>
+        <h1>Level-Up Events</h1>
       </header>
       <article className="events">
         {events.map((event) => {
