@@ -1,0 +1,10 @@
+.container {
+    background-image: url('./cat.jpeg'); 
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+.events__container {
+    margin-left: 5%;
+}

@@ -1,0 +1,14 @@
+
+.bg {
+    background-image: url('./cat_game_wallpaper.jpg'); 
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+.games__container {
+    margin-left: 5%;
+}
+.game__maker {
+    font-style: italic;
+}
+
