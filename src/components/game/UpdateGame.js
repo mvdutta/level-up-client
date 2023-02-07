@@ -140,7 +140,8 @@ const editGame = (evt) => {
             num_of_players: parseInt(currentGame.num_of_players),
             skill_level: currentGame.skill_level,
           };
-           updateGame(game).then(() => navigate("/games"));  
+           updateGame(game).then(() => navigate("/games"));
+       
         }}
           className="btn btn-primary"
         >

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { getEvents } from "../../managers/EventManager.js";
+import { navigate, useNavigate } from "react-router-dom";
 import "./EventList.css";
 
 
-export const EventList = (props) => {
+export const EventList = () => {
   const [events, setEvents] = useState([]);
+  const navigate = useNavigate();
 
   const formatTime = (dateStr) => {
     let d = new Date(dateStr);
@@ -31,7 +33,6 @@ export const EventList = (props) => {
     getEvents().then((data) => setEvents(data));
   }, []);
   
-
 
   return (
     <div className="container">
@@ -60,6 +61,16 @@ export const EventList = (props) => {
               <div className="event__description">
                 Description: {event.description}
               </div>
+              <button
+                className="btn-1"
+                type="submit"
+                id={event.id}
+                onClick={() => {
+                  navigate(`/eventupdate/${event.id}`);
+                }}
+              >
+                Edit Event
+              </button>
             </section>
           );
         })}

@@ -7,10 +7,9 @@ export const GameList = (props) => {
   const [games, setGames] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
+useEffect(() => {
     getGames().then((data) => setGames(data));
   }, []);
-
   
   return (
     <div className="bg">
