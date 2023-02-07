@@ -140,9 +140,7 @@ const editGame = (evt) => {
             num_of_players: parseInt(currentGame.num_of_players),
             skill_level: currentGame.skill_level,
           };
-          console.log(game)
-          // Send PUT request to your API
-          updateGame(game).then(() => {navigate("/games")});
+           updateGame(game).then(() => navigate("/games"));  
         }}
           className="btn btn-primary"
         >
