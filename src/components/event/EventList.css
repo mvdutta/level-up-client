@@ -2,12 +2,14 @@
     background-image: url('./cat.jpeg'); 
     height: 100%;
     width: 100%;
-    position: absolute;
 }
 
 .events__container {
     margin-left: 5%;
     overflow: scroll;
+}
+.events__header {
+    margin-bottom: 5%;
 }
 
 .events {

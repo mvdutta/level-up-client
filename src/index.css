@@ -23,12 +23,13 @@ code {
 }
 
 .fakeLink {
-    color: -webkit-link;
+    /* color: -webkit-link; */
     cursor: pointer;
     text-decoration: underline;
     background: none!important;
     border: none;
     cursor: pointer;
+	color: rgb(83, 77, 5);
 }
 
 .fakeLink:hover {
@@ -93,14 +94,14 @@ code {
 }
 
 /* Button 1 */
-.btn-1 {
-	background: rgb(173, 130, 99);
+.btn-2 {
+	background: rgb(173, 130, 99, 0.9);
 	color: #fff;
 	border-radius: 5px;
 	padding: 1px 10px;
 }
 
-.btn-1:hover {
+.btn-2:hover {
 	background: rgb(238, 226, 180);
 	color:  #404040;
 }
@@ -121,13 +122,16 @@ code {
 }
 
 /* Button 2 */
-.btn-2 {
-	background: #2ecc71;
+.btn-1 {
+	background: rgb(122, 150, 97, 0.8);
 	color: #fff;
+	border-radius: 5px;
+	padding: 1px 10px;
 }
 
-.btn-2:hover {
-	background: #27ae60;
+.btn-1:hover {
+	background: rgb(198, 227, 173);
+	color: #404040;
 }
 
 .btn-2:active {

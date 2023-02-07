@@ -4,6 +4,7 @@ import "./NavBar.css"
 export const NavBar = () => {
     const navigate = useNavigate()
     return (
+        <div className="nav__container">
       <ul className="navbar">
         <li className="navbar__item">
           <Link className="nav-link" to="/games">
@@ -53,5 +54,6 @@ export const NavBar = () => {
           </>
         )}{" "}
       </ul>
+      </div>
     );
 }

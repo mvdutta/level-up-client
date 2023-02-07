@@ -9,6 +9,9 @@
     margin-left: 5%;
     overflow: scroll;
 }
+.games__header {
+    margin-bottom: 5%;
+}
 
 .game__maker {
     font-style: italic;
@@ -20,4 +23,5 @@
 
 .btn-1 {
     margin-bottom: 15px;
+    margin-right: 5%;
 }

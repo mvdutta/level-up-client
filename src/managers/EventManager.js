@@ -43,3 +43,15 @@ export const updateEvent = (event) => {
     body: JSON.stringify(event),
   });
 };
+export const deleteEvent = (id) => {
+  const confirmed = window.confirm(
+    "Are you sure you want to delete this event?"
+  );
+  if (!confirmed) return;
+  fetch(`http://localhost:8000/events/${id}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Token ${localStorage.getItem("lu_token")}`,
+    },
+  });
+};

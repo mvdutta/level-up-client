@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { navigate, useNavigate } from "react-router-dom";
-import { getGames } from "../../managers/GameManager.js";
+import { getGames, deleteGame } from "../../managers/GameManager.js";
 import "./GameList.css";
 
 export const GameList = (props) => {
@@ -10,6 +10,7 @@ export const GameList = (props) => {
 useEffect(() => {
     getGames().then((data) => setGames(data));
   }, []);
+  
   
   return (
     <div className="bg">
@@ -50,6 +51,15 @@ useEffect(() => {
                 >
                   Edit Game
                 </button>
+                <button
+                className="btn-2"
+                type="submit"
+                id={game.id}
+                onClick={()=>{
+                    deleteGame(game.id)
+                    navigate(0)
+                }}
+                >Delete Game</button>
               </section>
             );
           })}

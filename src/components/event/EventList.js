@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getEvents } from "../../managers/EventManager.js";
+import { getEvents, deleteEvent } from "../../managers/EventManager.js";
 import { navigate, useNavigate } from "react-router-dom";
 import "./EventList.css";
 
@@ -70,6 +70,17 @@ export const EventList = () => {
                 }}
               >
                 Edit Event
+              </button>
+              <button
+                className="btn-2"
+                type="submit"
+                id={event.id}
+                onClick={() => {
+                  deleteEvent(event.id);
+                  navigate(0);
+                }}
+              >
+                Delete Event
               </button>
             </section>
           );
