@@ -3,6 +3,7 @@
     background-image: url('./cat_game.jpg'); 
     height: 100%;
     width: 100%;
+    background-repeat: no-repeat;
 }
 .games__container {
     margin-left: 5%;
@@ -15,4 +16,8 @@
 
 .games {
     margin-bottom: 20%;
+}
+
+.btn-1 {
+    margin-bottom: 15px;
 }

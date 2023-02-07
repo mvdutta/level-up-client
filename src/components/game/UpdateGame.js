@@ -1,44 +1,54 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { createGame, getGameTypes } from "../../managers/GameManager.js";
-import "./GameForm.css";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { getGameTypes, getGameById, updateGame } from "../../managers/GameManager.js";
 
-export const GameForm = () => {
-  const navigate = useNavigate();
-  const [gameTypes, setGameTypes] = useState([]);
- 
-  /*
-        Since the input fields are bound to the values of
-        the properties of this state variable, you need to
-        provide some default values.
-    */
-  const [currentGame, setCurrentGame] = useState({
-    skill_level: "",
-    num_of_players: "",
-    game_title: "",
-    maker: "",
-    type: 0,
-  });
+export const UpdateGame = () => {
+    const navigate = useNavigate(); 
+    const { gameId } = useParams();
+    const [gameTypes, setGameTypes] = useState([]);
+    const [currentGame, updateCurrentGame] = useState({
+      game_title: "",
+      maker: "",
+      type: "",
+      num_of_players: "",
+      skill_level: ""
+    });
 
-  useEffect(() => {
+
+useEffect(() => {
     // TODO: Get the game types, then set the state
     getGameTypes().then((data) => {
     setGameTypes(data)
     })
   }, []);
-  
-  const changeGameState = (evt) => {
-    const copy = {...currentGame}
-                copy[evt.target.id] = evt.target.value
-                setCurrentGame(copy)
-  };
 
-  const gameTypeOptions = gameTypes.map(el => <option value = {el.id}>{el.label}</option>)
- 
+
+ useEffect(() => {
+   getGameById(gameId).then((data) =>
+     updateCurrentGame({
+       game_title: data.game_title,
+       maker: data.maker,
+       type: data.type.id,
+       num_of_players: data.num_of_players,
+       skill_level: data.skill_level,
+     })
+   );
+ }, [gameId]);
+
+const editGame = (evt) => {
+    const copy = { ...currentGame };
+    copy[evt.target.id] = evt.target.value;
+    updateCurrentGame(copy);
+};
+
+  const gameTypeOptions = gameTypes.map((el) => (
+    <option value={el.id}>{el.label}</option>
+  ));
+
   return (
     <div className="bg-form">
       <form className="gameForm">
-        <h2 className="gameForm__title">Register New Game</h2>
+        <h2 className="gameForm__title">Update Game</h2>
         <fieldset>
           <div className="form-group">
             <label htmlFor="title">Title: </label>
@@ -50,7 +60,7 @@ export const GameForm = () => {
               autoFocus
               className="form-control"
               value={currentGame.game_title}
-              onChange={changeGameState}
+              onChange={editGame}
             />
           </div>
         </fieldset>
@@ -61,10 +71,9 @@ export const GameForm = () => {
               id="maker"
               type="text"
               required
-              autoFocus
               className="form-control"
               value={currentGame.maker}
-              onChange={changeGameState}
+              onChange={editGame}
             />
           </div>
         </fieldset>
@@ -77,7 +86,7 @@ export const GameForm = () => {
               required
               className="form-control"
               value={currentGame.skill_level}
-              onChange={changeGameState}
+              onChange={editGame}
             >
               <option value="0">Select a skill level</option>
               <option>Beginner</option>
@@ -96,7 +105,7 @@ export const GameForm = () => {
               min="1"
               className="form-control"
               value={currentGame.num_of_players}
-              onChange={changeGameState}
+              onChange={editGame}
             />
           </div>
         </fieldset>
@@ -109,7 +118,7 @@ export const GameForm = () => {
               required
               className="form-control"
               value={currentGame.type}
-              onChange={changeGameState}
+              onChange={editGame}
             >
               <option value="0">Select type of game</option>
               {gameTypeOptions}
@@ -123,20 +132,21 @@ export const GameForm = () => {
             // Prevent form from being submitted
             evt.preventDefault();
 
-            const game = {
-              maker: currentGame.maker,
-              game_title: currentGame.game_title,
-              num_of_players: parseInt(currentGame.num_of_players),
-              skill_level: currentGame.skill_level,
-              type: parseInt(currentGame.type),
-            };
-
-            // Send POST request to your API
-            createGame(game).then(() => navigate("/games"));
-          }}
+           const game = {
+            id: gameId,
+            game_title: currentGame.game_title,
+            maker: currentGame.maker,
+            type: parseInt(currentGame.type),
+            num_of_players: parseInt(currentGame.num_of_players),
+            skill_level: currentGame.skill_level,
+          };
+          console.log(game)
+          // Send PUT request to your API
+          updateGame(game).then(() => {navigate("/games")});
+        }}
           className="btn btn-primary"
         >
-          Create
+          Update
         </button>
       </form>
     </div>

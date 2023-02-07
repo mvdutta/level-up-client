@@ -94,16 +94,19 @@ code {
 
 /* Button 1 */
 .btn-1 {
-	background: #3498db;
+	background: rgb(173, 130, 99);
 	color: #fff;
+	border-radius: 5px;
+	padding: 1px 10px;
 }
 
 .btn-1:hover {
-	background: #2980b9;
+	background: rgb(238, 226, 180);
+	color:  #404040;
 }
 
 .btn-1:active {
-	background: #2980b9;
+	background: rgb(238, 226, 180);;
 	top: 2px;
 }
 
