@@ -1,10 +1,23 @@
 .navbar {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: left;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(216, 215, 160, 0.5);
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 8vh;
 }
 
 .navbar__item {
-    flex-basis: 20%;
+    flex-basis: 15%;
     list-style-type: none;
+}
+
+.nav-link {
+    color: rgb(30, 23, 8);
+    font-size: 17px;
+}
+.nav-link:hover {
+    color: rgb(241, 140, 62);
 }

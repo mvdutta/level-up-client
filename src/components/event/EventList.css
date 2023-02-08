@@ -1,0 +1,31 @@
+.container {
+    background-image: url('./cat.jpeg'); 
+    height: 100%;
+    width: 100%;
+}
+
+.events__container {
+    margin-left: 5%;
+    overflow: scroll;
+}
+.events__header {
+    margin-bottom: 5%;
+}
+
+.events {
+    margin-bottom: 20%;
+}
+
+.btn-1 {
+    margin-bottom: 15px;
+}
+.event__description {
+    margin-bottom: 15px;
+}
+.btn-3 {
+    margin-right: 5%;
+}
+
+.btn-4 {
+    margin-right: 5%;
+}

@@ -4,11 +4,12 @@
 
 body, button, input, select, textarea {
     color: #404040;
-    font-family: "Comfortaa", Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
     line-height: 1.5;
     padding: 0;
     margin: 0;
+	background-color: #f8f6f0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,12 +23,13 @@ code {
 }
 
 .fakeLink {
-    color: -webkit-link;
+    /* color: -webkit-link; */
     cursor: pointer;
     text-decoration: underline;
     background: none!important;
     border: none;
     cursor: pointer;
+	color: rgb(83, 77, 5);
 }
 
 .fakeLink:hover {
@@ -44,11 +46,11 @@ code {
 	font-family: Menlo;
 	font-size: inherit;
 	color: inherit;
-	background: none;
+	background: rgb(211, 200, 180);
 	cursor: pointer;
-	padding: 25px 80px;
+	padding: 5px 20px;
 	display: inline-block;
-	margin: 15px 30px;
+	margin-top: 30px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-weight: 700;
@@ -57,6 +59,8 @@ code {
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
+	border: 1px solid black;
+	border-radius: 5px;
 }
 
 .btn:after {
@@ -90,17 +94,22 @@ code {
 }
 
 /* Button 1 */
-.btn-1 {
-	background: #3498db;
+.btn-2 {
+	background: rgb(173, 130, 99, 0.9);
 	color: #fff;
+	border-radius: 5px;
+	padding: 1px 10px;
+	cursor: pointer;
 }
 
-.btn-1:hover {
-	background: #2980b9;
+.btn-2:hover {
+	background: rgb(238, 226, 180);
+	color:  #404040;
+	cursor: pointer;
 }
 
 .btn-1:active {
-	background: #2980b9;
+	background: rgb(238, 226, 180);;
 	top: 2px;
 }
 
@@ -115,13 +124,17 @@ code {
 }
 
 /* Button 2 */
-.btn-2 {
-	background: #2ecc71;
+.btn-1 {
+	background: rgb(122, 150, 97, 0.8);
 	color: #fff;
+	border-radius: 5px;
+	padding: 1px 10px;
+	cursor: pointer;
 }
 
-.btn-2:hover {
-	background: #27ae60;
+.btn-1:hover {
+	background: rgb(198, 227, 173);
+	color: #404040;
 }
 
 .btn-2:active {
@@ -141,16 +154,21 @@ code {
 
 /* Button 3 */
 .btn-3 {
-	background: #e74c3c;
+	background: rgb(43, 48, 52);
 	color: #fff;
+	border-radius: 5px;
+	padding: 1px 18px;
+	cursor: pointer;
 }
 
-.btn-3:hover {
-	background: #c0392b;
-}
+/* .btn-3:hover {
+	background: rgb(165, 164, 164);
+	color:  #010101;
+} */
+
 
 .btn-3:active {
-	background: #c0392b;
+	background: white;
 	top: 2px;
 }
 
@@ -166,18 +184,21 @@ code {
 
 /* Button 3 */
 .btn-4 {
-	background: #34495e;
+	background: #40876c;
 	color: #fff;
+	border-radius: 5px;
+	padding: 1px 10px;
+	cursor: pointer;
 }
 
-.btn-4:hover {
+/* .btn-4:hover {
 	background: #2c3e50;
-}
+} */
 
-.btn-4:active {
+/* .btn-4:active {
 	background: #2c3e50;
 	top: 2px;
-}
+} */
 
 .btn-4:before {
 	position: absolute;
