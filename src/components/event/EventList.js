@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getEvents, deleteEvent } from "../../managers/EventManager.js";
+import { getEvents, deleteEvent, joinEvent, leaveEvent } from "../../managers/EventManager.js";
 import { navigate, useNavigate } from "react-router-dom";
 import "./EventList.css";
 
@@ -33,6 +33,11 @@ export const EventList = () => {
     getEvents().then((data) => setEvents(data));
   }, []);
   
+  const joinEventButton = (id) => {
+        joinEvent(id).then(() => getEvents()).then(data => setEvents(data))}
+
+  const leaveEventButton = (id) => {
+        leaveEvent(id).then(() => getEvents()).then(data => setEvents(data))}
 
   return (
     <div className="container">
@@ -61,6 +66,11 @@ export const EventList = () => {
               <div className="event__description">
                 Description: {event.description}
               </div>
+              {
+                event.joined
+                ?<button className="btn-4" onClick={() => 
+                    leaveEventButton(event.id)}>Leave Event</button>:<button className="btn-3" onClick={() => joinEventButton(event.id)}>Join Event</button>        
+              }
               <button
                 className="btn-1"
                 type="submit"

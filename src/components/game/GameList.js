@@ -35,7 +35,7 @@ useEffect(() => {
                   Type of game: {game.type.label}
                 </div>
                 <div className="game__players">
-                  At least {game.num_of_players} player(s) needed
+                  Number of players needed: {game.num_of_players}
                 </div>
                 <div className="game__skillLevel">
                   Skill level is: {game.skill_level}

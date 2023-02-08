@@ -8,6 +8,7 @@ import { GameForm } from "../components/game/GameForm";
 import { EventForm } from "../components/event/EventForm";
 import { UpdateGame } from "../components/game/UpdateGame";
 import { UpdateEvent } from "../components/event/UpdateEvent";
+import { HomePage } from "../components/home/HomePage";
 
 export const ApplicationViews = () => {
   return (
@@ -32,6 +33,9 @@ export const ApplicationViews = () => {
         </Route>
         <Route element={<Authorized />}>
           <Route path="/eventupdate/:eventId" element={<UpdateEvent />} />
+        </Route>
+        <Route element={<Authorized />}>
+          <Route path="/home" element={<HomePage />} />
         </Route>
       </Routes>
     </>

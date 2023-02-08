@@ -55,3 +55,23 @@ export const deleteEvent = (id) => {
     },
   });
 };
+
+export const leaveEvent = (id) => {
+  return fetch(`http://localhost:8000/events/${id}/leave`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Token ${localStorage.getItem("lu_token")}`,
+    },
+  });
+};
+
+export const joinEvent = (id) => {
+  return fetch(`http://localhost:8000/events/${id}/signup`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Token ${localStorage.getItem("lu_token")}`,
+    },
+    body: JSON.stringify(id),
+  }).then((response) => response.json());
+};
